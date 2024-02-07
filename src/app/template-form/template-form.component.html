@@ -1,0 +1,190 @@
+<!-- <h3 class="container"style="background-color: aquamarine;">Template Driven Form With Validation </h3>
+<div class="container">
+<form name="empform"#frm="ngForm"(ngSubmit)="OnSubmitEmpData(frm)">
+    <div class="form-group"class="container">
+        <input type="hidden" name="id" #id="ngModel" ngModel [(ngModel)]="selectedData.id" >
+
+    </div>
+    
+    
+    
+    
+    <div class="form-group">
+    <label for="FirstName">First Name:<span style="color:red">*</span></label>
+    <input type="text" name="fname"class=form-control #fname="ngModel" ngModel 
+[(ngModel)]="selectedData.fname"
+    required [ngClass]="{'is-invalid': frm.submitted && fname.invalid}">
+    <div *ngIf="frm.submitted && fname.invalid" class="invalid-feedback" >
+        First Name is required.
+    </div>
+
+</div>
+
+
+
+    
+    <div class="form-group">
+    <label for="LastName">Last Name:<span style="color:red">*</span></label>
+    <input type="text"name="lname"class=form-control #lname="ngModel"ngModel
+    [(ngModel)]="selectedData.lname"
+    required [ngClass]="{'is-invalid':frm.submitted && lname.invalid}">
+    <div *ngIf="frm.submitted && lname.invalid "class=" invalid-feedback">lname is required</div>
+</div>
+<div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email"name="email"class=form-control #email="ngModel" ngModel 
+    [(ngModel)]="selectedData.email"
+    required [ngClass]="{'is-invalid': frm.submitted && fname.invalid}"
+    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    <div *ngIf="frm.submitted && email.untouched"class="invalid-feedback">
+        email is required
+
+    </div><div *ngIf="email.touched" class="invalid-feedback">
+        <div *ngIf="email.errors?.['pattern']">
+                Email is invalid, please enter valid email.
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="mobile ">Mobile No:</label>
+    <input type=" number"name="mobile"class=form-control #mobile ="ngModel"ngModel 
+    [(ngModel)]="selectedData.mobile"
+     >
+</div>
+<div class="form-group">
+    <label for="gender">Gender:</label>
+    <input type="radio"name="gender"value="male"#gender="ngModel"ngModel
+    [(ngModel)]="selectedData.gender" required
+    [ngClass]="{'is-invalid': frm .submitted && fname.invalid}">
+    <div *ngIf="frm.submitted && fname.invalid" class="invalid-feedback" >
+        gender is required.
+    </div>Male
+    ,<input type="radio"name="gender"value="female"#gender="ngModel"ngModel 
+    [(ngModel)]="selectedData.gender"
+    [ngClass]="{'is-invalid': frm.submitted && fname.invalid}">
+    <div *ngIf="frm.submitted && fname.invalid" class="invalid-feedback" >
+        gender is required.
+    </div>Female
+</div>
+<div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password"name="password"class=form-control #password="ngModel"ngModel
+    [(ngModel)]="selectedData.password"
+    required [ngClass]="{'is-invalid':frm.submitted && password.invalid}">
+    <div *ngIf="frm.submitted && password.invalid"class="invalid-feedback">
+        password is required
+    </div>
+
+    </div>
+    
+    <div class="form-group">
+    <label for="country">Select country</label><br>
+<select  name="sub"#sub="ngModel" ngModel
+[(ngModel)]="selectedData.sub" required 
+[ngClass]="{'is-invalid': frm .submitted && sub.invalid}">
+<option *ngFor="let sub of country">{{sub}}</option>
+</select><div *ngIf="frm.submitted && sub.invalid" class="invalid-feedback" >
+country is required.
+</div>
+</div>
+
+<br>
+
+
+    
+    
+    
+    <div class="form-group">
+    <button type="submit"class="btn btn-info">SUBMIT</button></div>
+    
+    
+    <button type="reset"class="btn btn-danger">RESET</button>
+
+
+
+</form>
+</div>
+<br><br>
+<div class="container">
+    <table class="table table-stripped">
+        <tr>
+            <th *ngFor="let tem of theader">{{tem}}</th>
+            <th>Action</th>
+            <th>Action</th>
+            
+        </tr>
+        <tr *ngFor="let temy of formdata">
+            <td>{{temy.fname}}</td>
+            <td>{{temy.lname}}</td>
+            <td>{{temy.email}}</td>
+            <td>{{temy.gender}}</td>
+            <td>{{temy.mobile}}</td>
+             <td>{{temy.password}}</td>  
+            
+            <td>{{temy.sub}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="onDelete(temy)">Delete</button>
+            </td>
+            <td>
+                <button class="btn btn-success"(click)="onDataSelect(temy)">Update</button></td>
+        </tr>
+    </table>
+</div>
+ -->
+<!-- <h3 style="background-color: palevioletred;"class="container">STUDENT REGISTRATION FORM</h3>
+<div class="container"style="border: solid 2px;color:black">
+    <form name="empform1" #frm="ngForm"(ngSubmit)=onSubmit1(frm)>
+        <label for="fname">First Name</label>
+        <input type="text"name="fname"class="form-control"#fname="ngModel"ngModel required
+        [ngClass]="{'is-invalid':frm.submitted && fname.invalid}">
+        <div *ngIf="frm.submitted && fname.invalid" class="invalid-feedback">First name is required</div>
+        <label for="lname">Last Name</label>
+        <input type="'text"name="lname"class="form-control"#lname="ngModel"ngModel 
+        required [ngClass]="{'is-invalid':frm.submitted && lname.invalid}">
+        <div *ngIf="frm.submitted && lname.invalid" class="invalid-feedback">Last Name is required</div>
+        <label for="email">Email</label>
+        <input type="email"name="email"class='form-control'#email="ngModel"ngModel
+        required [ngClass]="{'is-invalid':frm.submitted && email.invalid}"
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        <div *ngIf="frm.submitted && email.untouched"class="invalid-feedback">email is required</div>
+        <div *ngIf="frm.submitted && email.touched"class="invalid-feedback">
+            <div *ngIf="frm.submitted && email.errors?.['pattern']">email is invalid,please enter valid email</div>
+        </div>
+        <label for="password">Password</label>
+        <input type="password"name="password"class="form-control"#password="ngModel" ngModel 
+        required [ngClass]="{'is-invalid':frm.submitted && password.invalid}">
+        <div *ngIf="frm.submitted && password.invalid" class="invalid-feedback">password is required</div>
+        <label for="subject">Subject</label>
+        <select type="dropdown"name="subject"#subject="ngModel"ngModel 
+        required [ngClass]="{'is-invalid':frm.submitted && subject.invalid}">
+        
+            <option *ngFor="let get of Subject">{{get}}</option>
+        </select>
+        <div *ngIf="frm.submitted && subject.invalid"class="invalid-feedback">subject is required</div><br><br>
+        <button type="submit"class="ms-5; btn btn-info btn-sm col-3">SUBMIT</button>
+        <button type="reset"class="ms-5; btn btn-danger btn-sm col-3">RESET</button>
+    </form>
+</div>
+<br><br>
+<table class="table table-stripped">
+    <tr>
+        <th *ngFor="let get of theader1">{{get}}</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let set of formdata1">
+        <td>{{set.fname}}</td>
+        <td>{{set.lname}}</td>
+        <td>{{set.email}}</td>
+        <td>{{set.password}}</td>
+        <td>{{set.subject}}</td>
+        <td>
+            <button class="btn btn-warning">Delete</button>
+        </td>
+        <td>
+            <button class="btn btn-primary">Update</button>
+        </td>
+
+    </tr>
+
+</table> -->

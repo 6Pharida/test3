@@ -1,0 +1,32 @@
+<p>service2 works!</p>
+<!-- <button class="btn btn-link" click="sendFormData()">send data to backend</button><br> -->
+<!-- <button class="btn btn-link" click="UpdateApiData()">Update data at backend</button><br> -->
+<!-- <button class="btn btn-link" click="deleteFormData()">Delete data at backend</button> -->
+
+<table class="table table-stripped table-bordered table-danger">
+    <tr>
+        <th>id</th>
+        <th>email</th>
+        <th>first-name</th>
+        <th>last-name</th>
+        <th>avatar</th>
+        <th>Action</th>
+        <th>Action</th>
+        
+    </tr>
+    <tbody class="tbody-dark">
+    <tr *ngFor="let ted of sampleData1?.data">
+        <td>{{ted.id}}</td>
+        <td>{{ted.email}}</td>
+        <td>{{ted.first_name}}</td>
+        <td>{{ted.last_name}}</td>
+        <td><img [src]="ted.avatar" height=60px; width=60px; style="border:4px solid black;"></td>
+        <td>
+            <button class="btn btn-info">Delete</button>
+        </td>
+        <td>
+            <button class="btn btn-warning">Update</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

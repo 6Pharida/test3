@@ -1,0 +1,32 @@
+
+ <h4 style="color: brown;">{{test4}}</h4>  
+<h3>{{test5}}</h3>
+<h3>{{test6}}</h3>
+<h4 style="background-color: aquamarine;">{{test7}}</h4>
+<h2 style="background-color: goldenrod;">1.Interpolation Binding</h2>
+<h3>{{test8}}</h3>
+<h2 style="background-color: goldenrod;">2.Attribute Binding</h2>
+<a [href]="link">Go To Facebook</a>
+<h2 style="background-color: goldenrod;">3.Event Binding</h2>
+<button class="btn btn-danger" (click)="onClick()">SAVE</button><br>
+
+<h2 style="background-color: goldenrod;">4.Two way data  Binding</h2>
+<input type="text"[(ngModel)]="uname">
+<p>{{uname}}</p>
+ 
+<p>{{Text}}</p>
+<a [href]="(number>23? link1:link2)">Go to facebook or go to youtube</a><br>
+<button (click)="onClick()">SUBMIT</button><br>
+<input type="text"name="name"[(ngModel)]="username">
+<p>{{username}}</p>
+
+<p>{{test11}}</p>
+<a [href]="link3">CIDCO</a><br>
+<a [href]="(age1>20)? link2:link3">Cidco aur youtube</a><br>
+<img [src]="path"height="100px"width="70px">
+<img [src]="path1"height="100px"width="70px"><br>
+ <img [src]="(number>50)? path:path1" > -->
+<button (click)="onClick1()">SAVE ME</button><br>
+<input type="text" name="fname"[(ngModel)]="FirstName">
+<p>{{FirstName}}</p>
+  

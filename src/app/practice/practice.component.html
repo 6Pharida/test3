@@ -1,0 +1,113 @@
+<!-- <p>practice works!</p>
+<p>{{test1}}</p>
+<a [href]="link">Link</a>
+ <img [src]="img"> -->
+<!-- <button (click)="onClick()">submit</button>
+<input type="text"name="fname"[(ngModel)]="sample">
+{{sample}}
+
+<p *ngIf="age==30">I AM 30 YEARS OLD</p>
+<p *ngFor="let dt of fruits">{{dt}}</p>
+<div [ngSwitch]="name">
+<p *ngSwitchCase="'ram'">name is ram</p>
+<p *ngSwitchCase="'rohan'">name is </p>
+<p *ngSwitchCase="'raja'">name is</p>
+</div>
+<p [ngClass]="(age==40)?'classA':'classB'">This an Practice folder</p>
+<p [ngStyle]="{'color':(age>=40)?'red':'yellow'}">This An style atribute</p>
+<p appCustomDirective>This An custom directive</p>
+<p>pipe:{{name1 |  uppercase}}</p>
+<p>{{name1 | lowercase}}</p>
+<p>{{name1 | titlecase }}</p>
+<p>{{date}}</p>
+<p>{{date | date:'short'}}</p>
+<p>{{date | date:'medium'}}</p>
+<p>{{date | date:'dd/MM/yy'}}</p>
+<p>{{date | date:'dd/MM/yyy'}}</p>
+<p>{{date | date:'EEEE/MMM/yyyy'}}</p>
+<p>{{salary| currency:'IND'}}</p>
+<p>{{text| slice:0:5}}</p>
+<P>{{student | json}}</P>
+<p custom2> {{count | custom2:2}}</p>
+<p custom2> {{count | custom2:5:2}}</p>
+<p custom3>{{name1 | custom3:gender}}</p>
+<p custom3>{{name2| custom3:gender2}}</p>
+
+  -->
+  <!-- <form #frm="ngForm" (ngSubmit)="onSubmit(frm)" >
+  <label for="fname">FIRST NAME</label>
+  <input type="text" name="fname"class="form-control" #fname="ngModel"ngModel 
+  required [ngClass]="{'is-invalid' :frm.submitted && fname.invalid}">
+  <div *ngIf="frm.submitted && fname.invalid"class="invalid-feedback">First name is required</div>
+  <label for="lname">LAST NAME</label>
+  <input type="text" name="lname"class="form-control" #lname="ngModel"ngModel>
+  <label for="password">PASSWORD</label>
+  <input type="text" name="password"class="form-control"#password="ngModel"ngModel>
+  <button type="submit" class="btn btn-info">SUBMIT</button>
+  
+  </form>
+<div>
+    <table class="table table-stripped">
+        <tr *ngFor="let tem of theader">{{tem}}</tr>
+
+        <tr></tr>
+
+    </table>
+</div>
+<input type="text" name="fname"[(ngModel)]="sample">
+{{sample}} -->
+<div class="container"style="background-color:orange">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit1()">
+    <div class="form-group">
+    <label for="id"><b>Id</b></label>
+    <input type="text" name="id"class="form-control"formControlName="id">
+    </div>
+  <div class="form-group">
+    <label for="email"><b>email</b></label>
+    <input type="text"class="form-control"formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="first_name"><b>First Name</b></label>
+    <input type="text"class="form-control"formControlName="first_name">
+  </div>
+  <div class="form-group">
+    <label for="last_name"><b>Last Name</b></label>
+    <input type="text"class="form-control"formControlName="last_name">
+  </div>
+  <div class="form-group">
+    <label for="avatar"><b>Avatar</b></label>
+    <input type="'text"class="form-controll"formControlName="avatar">
+  </div><br>
+  <div class="form-group">
+    <button type="submit" class="btn btn-info">Submit</button>
+    <button type="reset" class="btn btn-dark ms-3 ">Reset</button>
+    <button type="button" class="btn btn-danger ms-3"(click)="onUpdate()">Edit</button>
+  </div>
+  </form>
+</div><br><br>
+
+<table class="table table-stripped">
+<thead class=" table table-primary">
+  <tr>
+    <td><b>Id</b></td>
+    <td><b>Email</b></td>
+    <td><b>First Name</b></td>
+    <td><b>Last Name</b></td>
+    <td><b>Avatar</b></td>
+    <td><b>Action</b></td>
+    <td><b>Action</b></td>
+  </tr>
+</thead>
+<tbody class="table table-bordered table-danger">
+  <tr *ngFor="let y of tableData?.data">
+    <td>{{y.id}}</td>
+    <td>{{y.email}}</td>
+    <td>{{y.first_name}}</td>
+    <td>{{y.last_name}}</td>
+    <td><img [src]="y.avatar"height="80px"width="80px"></td>
+    <td><button class="btn btn-info" (click)="onDelete(y)">Delete</button></td>
+    <td><button type="button" class="btn btn-danger"(click)="onEdit(y)">Update</button></td>
+  </tr>
+</tbody>
+
+</table>

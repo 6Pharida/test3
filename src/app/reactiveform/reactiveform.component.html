@@ -1,0 +1,61 @@
+<div class="container"style="background-color:pink">
+<h3 style="background-color: yellowgreen;">Student Registration Reactive Form </h3>
+<form [formGroup]="empForm"(ngSubmit)="onSubmitData()">
+    <div class="form-group">
+    <label for="fname" >First Name</label>
+    <input type="text"name="fname"class="form-control"formControlName="fname">
+    
+</div>
+<div class="form-group">
+    <label for="lname">Last Name</label>
+    <input type="text"name="lname"class="form-control"formControlName="lname">
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="'email"name="email"class="form-control"formControlName="email">
+</div>
+<div class="form-group">
+    <label for="gender">Gender</label>
+
+    <input type="radio"name="gender" value= "male" formControlName="gender">Male
+    <input type="radio"name="gender" value="female"formControlName="gender">Female
+</div>
+<div class="form-group">
+    <label for="password">password</label>
+    <input type="password"name="password"class="form-control"formControlName="password">
+</div>
+<div class="form-group">
+    <label for="subject">Select subject</label><br>
+    <select formControlName="subject">
+    <option value="">select one subject</option>
+    <option *ngFor="let sub of subject">{{sub}}</option>
+    </select>
+</div><br>
+<div class="form-group">
+    <button class="btn btn-info "type="submit">Submit</button>
+</div>
+</form>
+
+</div><br>
+<div class="container"style="background-color:yellowgreen">
+    <table class="table table-stripped">
+        <tr>
+<th *ngFor="let wer of theader">{{wer}}</th>
+<th>Action</th>
+<th>Action</th>
+        </tr>
+        <tr *ngFor="let wery of formdata">
+          <td>{{wery.fname}}</td>  
+          <td>{{wery.lname}}</td>
+          <td>{{wery.email}}</td>
+          <td>{{wery.gender}}</td>
+          <td>{{wery.password}}</td>
+          <td>{{wery.subject}}</td>
+          <td>
+            <button class="btn btn-danger" (click)="onDelete(wery)">Delete</button>
+        </td>
+
+
+        </tr>
+    </table>
+</div>

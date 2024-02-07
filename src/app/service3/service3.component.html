@@ -1,0 +1,64 @@
+<div class="container" style="background-color: rgb(232, 224, 0)">
+  <H2 style="background-color: rgb(139, 118, 245);">REACTIVE FORM WITH CRUD OPERATION</H2>
+  <form [formGroup]="studData"  >
+    <label for="title"><b>Title</b></label>
+    <input type="text" class="form-control">
+    <label for="price"><b>Price</b></label>
+    <input type="text" class="form-control">
+    <label for="description"><b>Description</b></label>
+    <input type="text" class="form-control">
+    <label for="category"><b>Category</b></label>
+    <input type="text" class="form-control">
+    <label for="image"><b>Image</b></label>
+    <input type="text" class="form-control">
+    <label for="rating"><b>Rating</b></label>
+    <input type="text" class="form-control">
+    <input type="submit"class='btn btn-danger col-3'>
+    <button type="button"class='btn btn-success col-3 ms-3'(click)="onUpdatedData()">Edit</button>
+    <button type="button"class='btn btn-dark col-3 ms-3'>Reset</button>
+    
+    
+    
+  </form>
+</div><br><br>
+
+
+
+
+
+
+
+<h2 style="background-color: orangered;"><b>Fakestore Data</b></h2>
+<table class="table table-stripped table-bordered">
+  <thead class="table table-primary">
+    <tr>
+       <th><b>id</b></th>
+       <th><b>title</b></th>
+       <th><b>price</b></th>
+       <th><b>description</b></th>
+       <th><b>category</b></th>
+       <th><b>image</b></th>
+       <!-- <th><b>rating</b></th>  -->
+       <th><b>Action</b></th>
+       <th><b>Action</b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tem of sample1">
+      <td>{{tem.id}}</td>
+      <td>{{tem.title}}</td>
+      <td>{{tem.price}}</td>
+      <td>{{tem.description}}</td>
+      <td>{{tem.category}}</td>
+      <td>
+        <img [src]="tem.image" height="80px"width="80px">
+      </td>
+      <!-- <td>{{tem.rating}}</td> -->
+  
+    <td><button class="btn btn-info"(click)="onDeleteData(tem)">Delete</button></td>
+      <td><button type="button" class="btn btn-danger"(click)="onEdit(tem)">Update</button></td>
+
+
+    </tr>
+  </tbody>
+</table>

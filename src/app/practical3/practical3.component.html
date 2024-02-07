@@ -1,0 +1,66 @@
+<p>practical3 works!</p>
+<P>{{name}}</P>
+<a [href]="link">Link</a>
+<button (click)="onClick()">CLICK ME</button>
+<input type="text"name="fname"[(ngModel)]="country">
+<p>{{country}}</p>
+
+
+<p *ngIf="(age>30)">HI I AM PHARIDA</p>
+<p *ngFor="let sub of subject">{{sub}}</p>
+<div [ngSwitch]="Fruits">
+    <p *ngSwitchCase="'Mango'">Mango</p>
+    <p *ngSwitchCase="'Graphes'">Banana</p>
+    <p *ngSwitchDefault>this is outer</p>
+</div>
+
+<P [ngClass]="(age>50)?'classA':'classB'">This is an cake shop</P>
+<h3 [ngStyle]="{color:(age>30)?'red':'blue'}">HELLO FRIENDS</h3>
+
+<h3 appCustomDirective>CUSTOM DIRECTIVES</h3>
+
+<p>{{name1 | titlecase}}</p>
+<p>{{car | json}}</p>
+<p>{{date | date:'short'}}</p>
+<P>{{name1 | slice:0:2}}</P>
+<p>{{salary | currency:'INR'}}</p>
+<!-- <p custom1>{{name2 | custom1:gender}}</p> -->
+<p custom1>{{salary |custom1:2}}</p>
+<div class="container"style="background-color:aquamarine">
+<form #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+    <div class="form-group">
+    <label>First Name</label>
+    <input type="text"name="fname" #fname="ngModel" ngModel class="form-control"
+    required [ngClass]="{'is-invalid':frm.submitted && fname.invalid}">
+    
+    <div *ngIf="frm.submitted && fname.invalid"class="invalid-feedback">
+        first name is required
+    </div>
+    </div>
+<div class="form-group">
+<label> Last Name</label>
+    <input type="text"name="lname"#lname="ngModel" ngModel class="form-control">
+</div>
+<div class="form-group">
+    <button class="btn btn-primary">Submit</button>
+</div>
+
+    
+</form>
+</div><br><br>
+<div class="container classB">
+    <form [formGroup]="MyForm" (ngSubmit)="OnSubmit2()">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text"class="form-control" formControlName="fname">
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lname">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-warning">Submit</button>
+
+        </div>
+    </form>
+</div>

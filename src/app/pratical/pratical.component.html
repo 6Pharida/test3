@@ -1,0 +1,60 @@
+<!-- <p>pratical works!</p>
+{{name}}
+<a [href]="path">Link</a>
+<button (click)="onClick()">SAVE</button>
+<input type="text" name="fname"[(ngModel)]="test1">
+{{test1}}
+
+<p *ngIf="age>20">Hello I Am Angular</p>
+<p ngFor="{let tem of name1}">{{name1}}</p>
+<div [ngSwitch]="country">
+    <p *ngSwitchCase="'India'">Hello India</p>
+    <p *ngSwitchCase="'A'">hello America</p>
+    <p *ngSwitchDefault>i am Default</p>
+</div>
+
+<p [ngClass]="(age>40)?'classA':'classB'">My Name Is Angular</p>
+<p [ngStyle]="{color:(age>40)?'red':'orange'}">ANGULAR</p>
+<p appCustomDirective >I Want Custom Directive </p>
+
+<div class="container">
+    <form name="myForm" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+        <div class="form-group">
+            <label for="fname"class="form-label">First Name</label>
+            <input type="text" name="fname" class="form-control"#fname="ngModel"ngModel
+            required [ngClass]="{'is-invalid':frm.submitted && fname.invalid}">
+            <div *ngIf="frm.submitted && fname.invalid"class="invalid-feedback">
+            First Name is reqiured</div>
+        </div>
+        <div class="form-group"class="form-label">
+            <label for="lname"class="form-label">Last Name</label>
+            <input type="text"name="lname" class="form-control"#lname="ngModel"ngModel
+            required [ngClass]="{'is-invalid':frm.submitted && lname.invalid}">
+            <div *ngIf="frm.submitted && lname.invalid"class="invalid-feedback">lname is required</div>
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-info"type="submit">SUBMIT</button>
+        </div>
+    </form> 
+
+</div> -->
+<div class="container">
+    <form name="myForm1" [formGroup]="myForm1"(ngSubmit)="onSubmitData()">
+  <div class="form-group">
+    <label for="fname"class="form-label">First Name</label>
+    <input type="text"name="fname" class="form-control"formControlName="fname"reqiured
+    [ngClass]="{'is-invalid':isSubmitted && f.fname.errors }">
+
+  </div>
+  <div class="form-group">
+    <label for="lname"class="form-label">Last Name</label>
+     <input type="text"name="lname" class="form-control" formControlName="lname"reqiured
+     [ngClass]="{'is-invalid':isSubmitted && f.lname.errors}">
+    </div>
+  <div class="form-group" >
+    <button class="btn btn-danger"type="submit">SUBMIT</button>
+     
+    </div>
+    </form>
+</div>

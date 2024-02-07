@@ -1,0 +1,10 @@
+.parent{
+    color:red;
+    border:2px solid black;
+    background-color: aquamarine;
+}
+.child{
+    background-color: pink;
+    border: 2px solid black;
+}
+

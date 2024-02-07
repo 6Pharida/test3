@@ -1,0 +1,25 @@
+<p>practical2 works!</p>
+<p>{{test1}}</p><br>
+<a [href]="link">Link</a><br>
+<button class="btn btn-primary" (click)="onClick()">SUBMIT</button><br>
+<input type="text"name="fname"[(ngModel)]="sample">
+{{sample}}
+
+<P *ngIf="(age>30)">Welcome CodeNg</P>
+<table class="table table-stripped">
+    <tr>
+    <th *ngFor=" let tem of cricket">{{tem}}</th>
+    </tr>
+</table>
+
+<div [ngSwitch]="country">
+    <p *ngSwitchCase="'India'">India is my country</p>
+    <p *ngSwitchCase="'china'">china is my country</p>
+    <p *ngSwitchDefault>This is a default statement</p>
+</div>
+
+<h2 [ngClass]="(age>50)?'classA':'classB'">WELCOME TO MY HOME</h2>
+<h3 [ngStyle]="{color:(age>30)?'green':'blue'}">HELLO FRIENDS</h3>
+
+<h2 appCustom2>This is an Custom Directive</h2>
+

@@ -1,0 +1,106 @@
+<h3>Data Binding</h3>
+{{test1}}<br>
+<a [href]="link">Link</a><br>
+<button class="btn btn-danger" (click)="onClick()">SUBMIT</button><br>
+<input type="text" name="fname" [(ngModel)]="sample"><br> 
+{{sample}}
+<h3 appCustomDirective>Directives</h3>
+<p *ngIf="age>=30">This is an example of directives of ngIf</p>
+<p *ngFor="let dt of studData">{{dt}}</p>
+<div [ngSwitch]="name">
+    <p *ngSwitchCase="'ram'">name is ram</p>
+    <p *ngSwitchCase="'rohan'">name is</p>
+    <p *ngSwitchCase="'raja'">name is</p>
+    <p *ngSwitchDefault>This an default statement</p>
+</div>
+<p [ngClass]="(age>=20)? 'classA':'classB'">Attribute directive in NgClass</p>
+<p [ngStyle]="{color:(age>=30)?'green':'blue'}">Atrribute directive in NgStyle </p>
+
+<p appCustomDirective>Custom Directive Example</p>
+<p>{{name1 | uppercase}}</p>
+<p>{{name1 | lowercase}}</p>
+<p>{{name1 | titlecase}}</p>
+<p>{{salary | currency: 'IND'}}</p>
+<p>{{sample1 |slice:0:4}}</p>
+<P>{{std | json}}</P>
+<p>{{date}}</p>
+<p>{{date | date:'short'}}</p>
+<p>{{salary | custom1:5}}</p>
+<p>{{name2 |custom1:gender}}</p>
+<!-- <h3>TEMPLATE FORM</h3>
+<div style="background-color:rgb(228, 146, 208);"class="container">
+<form name="frm" #frm="ngForm" (ngSubmit)="frm.form.valid && onSubmit(frm)">
+    <div class="form-group">
+        <input type="hidden" name="id"#id="ngModel"[(ngModel)]="selectedData.id">
+    </div>
+<div class="form-group">
+   <label for="fname">FIRST NAME</label>
+   <input type="text"name="fname"class="form-control"#fname="ngModel"ngModel [(ngModel)]="selectedData.fname"
+   required [ngClass]="{'is-invalid':frm.submitted && fname.invalid}">
+   <div class="invalid-feedback">first is required</div>
+</div>
+<div class="form-group">
+    <label for="lname">LAST NAME</label>
+    <input type="text"name="lname"class="form-control"#lname="ngModel"ngModel [(ngModel)]="selectedData.lname"
+    required [ngClass]="{'is-invalid':frm.submitted && lname.invalid}">
+    <div class="invalid-feedback">last name is required </div>
+ </div>
+ <div class="form-group">
+    <label for="password">PASSWORD</label>
+    <input type="text"name="password"class="form-control"#password="ngModel"ngModel [(ngModel)]="selectedData.password"
+    required [ngClass]="{'is-invalid':frm.submitted && password.invalid}">
+    <div class="invalid-feedback">password is required</div>
+ </div>
+ <div class="form-group">
+    <label for="email">EMAIL</label>
+    <input type="text"name="email"class="form-control"#email="ngModel"ngModel [(ngModel)]="selectedData.email"
+    required [ngClass]="{'is-invalid':frm.submitted && email.invalid}">
+    <div class="invalid-feedback">email is required</div>
+</div>
+<div class="form-group">
+   <label for="country">country</label>
+    <select name="country" #country="ngModel"ngModel [(ngModel)]="selectedData.country"
+    required [ngClass]="{'is-invalid':frm.submitted && country.invalid}">
+        <option *ngFor="let tem of coun">{{tem}}</option>
+
+
+    </select>
+    <div class="invalid-feedback">country is required</div>
+</div>
+<br>
+
+
+ -->
+
+
+
+
+<!-- <input type="submit" name="submit"class="btn btn-danger ms-4">
+<input type="reset" name="reset"class="btn btn-success ms-4">
+<button type="button"(click)="onUpdate(frm)"class="btn btn-warning ms-4">UPDATE</button>
+
+</form></div>
+<br><br>
+<table class="table table-stripped">
+    <tr>
+        <th *ngFor="let ted of header">{{ted}}</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let tem of formdata">
+        <td>{{tem.fname}}</td>
+        <td>{{tem.lname}}</td>
+        <td>{{tem.password}}</td>
+        <td>{{tem.email}}</td>
+        <td>{{tem.country}}</td>
+        <td>
+            <button class="btn btn-info"(click)="onDelete(tem)">Delete</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)="onDataSelect(tem)">Update</button>
+        </td>
+        
+</tr>
+    
+</table> -->
+

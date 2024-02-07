@@ -1,0 +1,91 @@
+<div class="container" style="background-color: yellowgreen">
+  <h3 style="background-color: yellow"><b>REACTIVE FORM WITH VALIDATION</b></h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="FullName"><b>FullName</b></label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="FullName"
+        required
+        [ngClass]="{ 'is-invalid': isformsub && f.FullName.errors }"
+      />
+      <div class="invalid-feedback">First name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="LastName"><b>LastName</b></label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="LastName"
+        required
+        [ngClass]="{ 'is-invalid': isformsub && f.LastName.errors }"
+      />
+      <div class="invalid-feedback">Last name is required</div>
+    </div>
+    <div class="form-group">
+      <label for="Email"><b>Email</b></label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="Email"
+        required
+        [ngClass]="{ 'is-invalid': isformsub && f.Email.errors }"
+      />
+       <div 
+        *ngIf="isformsub && f.Email.errors?.['required']"
+        class="invalid-feedback"
+      >
+        Enter Email
+      </div>
+      <div *ngIf="isformsub && f.Email.errors?.['pattern']"class="invalid-feedback">Enter valid Email?</div> 
+    </div>
+    <div class="form-group">
+      <label for="password"><b>password</b></label>
+      <input
+        type="password"
+        class="form-control"
+        formControlName="password"
+        required
+        [ngClass]="{ 'is-invalid': isformsub && f.password.errors }"
+      >
+      <div class="invalid-feedback">password is required</div>
+    </div>
+    <div class="form-group">
+      <label for="subject"><b>select subject</b></label>
+      <select
+        formControlName="subj"
+        required
+        [ngClass]="{ 'is-invalid': isformsub && f.subj.errors }"
+      >
+        <option *ngFor="let sub of subject">{{ sub }}</option>
+      </select>
+      <div class="invalid-feedback">subject is required</div>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-info ms-8 col-2"(click)="onSubmit1()">SUBMIT</button>
+    <button type="reset" class="btn btn-danger ms-8 col-2">RESET</button>
+    <button type="button" class="btn btn-warning ms-8 col-2">UPDATE</button>
+  </form>
+</div>
+<br />
+<table class="table table-stripped table-secondary">
+  <thead>
+    <tr>
+      <td *ngFor="let tem of theader">{{ tem }}</td>
+      <td>Action</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+   <tbody>
+    <tr *ngFor="let set of newData">
+      <td>{{ set.FullName }}</td>
+      <td>{{ set.LastName }}</td>
+      <td>{{ set.Email }}</td>
+      <td>{{ set.password }}</td>
+      <td>{{ set.subj }}</td>
+      <td>Delete</td>
+      <td>Update</td>
+    </tr>
+  </tbody> 
+</table>

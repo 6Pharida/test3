@@ -1,0 +1,28 @@
+<h3 class="container"style="background-color:yellow">Directive Component</h3>
+<p>There are two types:</p>
+<h3 style="color:green">1.Built in directive:<br>a.structrural directive<BR> b.atrribute directive <br>c.component directive</h3>
+
+
+<h3 style="color:red">2.Custom directive</h3>
+<h3 >Structrural Directives</h3>
+<h4>1.ngIf</h4>
+<h4>2.ngFor</h4>
+<h4>3.ngSwitch</h4>
+
+<p *ngIf="(age>18)">This is Directives</p>
+<p *ngIf="(age1>25) && (showdata==false)">this is not directive</p>
+<p *ngFor="let sub of subject">{{sub}}</p>
+<p *ngFor="let de of marks">{{de}}</p>
+<div [ngSwitch]="country">
+ 
+    <P *ngSwitchCase="'Austrilia'">country</P>
+    <P *ngSwitchCase="'India'">country is india</P>
+    <P *ngSwitchCase="'China'">country</P>
+    <P *ngSwitchCase="'Malesia'">country</P>
+    <p *ngDefault>this default statemant</p>
+<div>
+    <p appCustomDirective>This is an custom directive</p>
+</div>
+<p>custom pipe:amount |custom3:2</p>
+
+</div>

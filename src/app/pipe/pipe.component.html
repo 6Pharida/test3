@@ -1,0 +1,35 @@
+<p>pipe works!</p>
+<div class="container">
+    <h2 style="color:yellowgreen">1.uppercase,lowercase,titlecase pipe</h2>
+    <h2 style="background-color: aqua;">Angular Pipes</h2>
+    <p style="color:red">Original data:{{data}}</p>
+    <p style="color:green">Uppercase data:{{data | uppercase}}</p>
+    <p style="color:brown">Lowercase data:{{data | lowercase}}</p>
+    <p style="color:blue">Titlecase data:{{data | titlecase}}</p>
+<h2 style="color:brown">2.date pipe</h2>
+<p>original date:{{date}}</p>
+<p> standard date format:{{date | date}}</p>
+<p>short date format:{{date | date:'short'}}</p>
+<p>Medium date format:{{date | date:'medium'}}</p>
+<p>custom date format :{{date | date:'dd/MM/yy'}}</p>
+<p>custom date format:{{date | date:'dd/MM/yyyy'}}</p>
+<p>custom date format:{{date | date:'EEEE/MMM/yyyy'}}</p>
+<h3 style="color:palevioletred">3.JSON</h3>
+<p>{{data2 | json}}</p>
+<h2>4.slice</h2>
+<P>original data :{{data3}}</P>
+<P>original data :{{data3 | slice:2}}</P>
+<P>original data :{{data3 | slice:0:4}}</P>
+<h3 style="color:blue">5.currency</h3>
+<p>original data:{{salary}}</p>
+<p>currency pipe:{{salary | currency: 'IND'}}</p>
+<p>curreny pipe:{{salary | currency: 'USD'}}</p>
+<p>currency pipe:{{salary | currency: 'EUR'}}</p>
+<p>multiple pipe Data:{{data | slice:0:3 | uppercase}}</p>
+<h3>Custom Pipe</h3>
+<!-- <p>custom:{{ name2 | custom2:gender1 }}</p> -->
+<!-- <p>custom:{{salary1 | custom2:2}}</p> -->
+<p>custom pipe:{{name1 |custom1:gender }}</p>
+<p>custom:{{salary2 | custom3 : 2}}</p>
+<p>custom pipe:{{salary3 | custom3 :4}}</p>
+</div>

@@ -1,0 +1,26 @@
+<p>practice4 works!</p>
+<p>{{test1}}</p>
+<a [href]="test2">Link</a>
+<button (click)="onClick()">Submit</button>
+<input type="text" name="fname"[(ngModel)]="test3">
+<p>{{test3}}</p>
+
+
+<p *ngIf="age>30" >I am Pharida</p>
+<p *ngFor="let tem of fruits">{{tem}}</p>
+<div [ngSwitch]="country">
+    <p *ngSwitchCase="'India'">country is india</p>
+    <p *ngSwitchCase="'china'">country is china</p>
+    <p *ngSwitchDefault>country is undefine</p>
+</div>
+<p [ngClass]="(age>30)?'classA':'classB'">Change my colour</p>
+<p [ngStyle]="{color:(age>30)?'red':'yellow'}">Hi This pharida</p>
+  
+  
+  <p appCustom2  >Hello Everyone</p>
+
+  <p>{{salary | currency :'IND' }}</p>
+  <P>{{studData |json}}</P>
+
+  <p>{{date | date:'short'}}</p>
+  <!-- <p custom2>{{salary | custom2:2}}</p> -->
